@@ -94,6 +94,7 @@ class JsonapiControllerTest extends AimeosTestAbstract
 
 		$params = ['site' => 'unittest', 'resource' => 'basket'];
 		$response = $this->action( 'PUT', '\Aimeos\Shop\Controller\JsonapiController@putAction', $params );
+print_r( $response->getContent() );
 
 		$json = json_decode( $response->getContent(), true );
 		$this->assertArrayHasKey( 'errors', $json );
