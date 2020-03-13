@@ -8,7 +8,6 @@ class JsonadmControllerTest extends AimeosTestAbstract
 
 		$params = ['site' => 'invalid', 'resource' => 'product'];
 		$response = $this->action( 'OPTIONS', '\Aimeos\Shop\Controller\JsonadmController@optionsAction', $params );
-print_r( $response->getContent() );
 
 		$json = json_decode( $response->getContent(), true );
 
@@ -23,7 +22,6 @@ print_r( $response->getContent() );
 
 		$params = ['site' => 'unittest', 'resource' => 'product'];
 		$response = $this->action( 'OPTIONS', '\Aimeos\Shop\Controller\JsonadmController@optionsAction', $params );
-print_r( $response->getContent() );
 
 		$json = json_decode( $response->getContent(), true );
 
@@ -52,7 +50,6 @@ print_r( $response->getContent() );
 		$params = ['site' => 'unittest', 'resource' => 'stock/type'];
 		$content = '{"data":{"type":"stock/type","attributes":{"stock.type.code":"laravel","stock.type.label":"laravel"}}}';
 		$response = $this->action( 'POST', '\Aimeos\Shop\Controller\JsonadmController@postAction', $params, [], [], [], [], $content );
-print_r( $response->getContent() );
 
 		$json = json_decode( $response->getContent(), true );
 
